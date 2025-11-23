@@ -80,6 +80,10 @@ IMAGE_MODEL = "models/gemini-2.5-flash-image"
 
 app = FastAPI(title="UniAI — Gemini Backend")
 
+@app.get("/")
+def home():
+    return {"status": "UniAI backend is running"}
+
 # ----- CORS -----
 app.add_middleware(
     CORSMiddleware,
